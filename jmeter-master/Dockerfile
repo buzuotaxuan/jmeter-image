@@ -34,18 +34,3 @@ RUN chmod +x /run-test.sh \
 
 WORKDIR /jmeter-log/
 ENTRYPOINT /run-test.sh
-
-ADD log4j2.xml $JMETER_HOME/bin/log4j2.xml
-ADD jmeter.properties $JMETER_HOME/bin/jmeter.properties
-
-EXPOSE 60000
-ENV SSL_DISABLED true
-ENV TESTS_DIR /test
-
-ADD run-test.sh /run-test.sh
-RUN chmod +x /run-test.sh \
-    && mkdir /test \
-    && mkdir /jmeter-log
-
-WORKDIR /jmeter-log/
-ENTRYPOINT /run-test.sh

@@ -1,7 +1,7 @@
 wget --no-check-certificate "${METERSPHERE_URL}/jmeter/download?testId=${TEST_ID}&resourceId=${RESOURCE_ID}&ratio=${RATIO}&reportId=${REPORT_ID}&resourceIndex=${RESOURCE_INDEX}" -O ${TEST_ID}.zip
 unzip -o ${TEST_ID}.zip -d ${TESTS_DIR}
 
-while [[ $(curl -s ${METERSPHERE_URL}/jmeter/ready?&ratio=${RATIO}&resourceIndex=${RESOURCE_INDEX}&reportId=${REPORT_ID}) -gt  0 ]]
+while [[ $(curl -s -G -d "ratio=${RATIO}" -d "resourceIndex=${RESOURCE_INDEX}" -d "reportId=${REPORT_ID}" ${METERSPHERE_URL}/jmeter/ready) -gt  0 ]]
 do
   sleep 0.1
 done

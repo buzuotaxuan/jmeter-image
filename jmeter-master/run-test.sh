@@ -3,7 +3,7 @@ unzip -o ${TEST_ID}.zip -d ${TESTS_DIR}
 
 while [[ $(curl -s -G -d "ratio=${RATIO}" -d "resourceIndex=${RESOURCE_INDEX}" -d "reportId=${REPORT_ID}" ${METERSPHERE_URL}/jmeter/ready) -gt  0 ]]
 do
-  sleep 0.1
+  sleep 0.2
 done
 
 for file in ${TESTS_DIR}/*.jmx; do

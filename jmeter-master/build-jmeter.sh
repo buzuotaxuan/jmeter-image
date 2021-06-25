@@ -6,7 +6,7 @@ wget https://mirrors.tuna.tsinghua.edu.cn/apache/jmeter/binaries/apache-jmeter-$
 wget https://jmeter-plugins.org/files/packages/jpgc-casutg-2.9.zip && \
 wget https://jmeter-plugins.org/files/packages/jpgc-tst-2.5.zip && \
 wget https://github.com/metersphere/jmeter-backend-listener-kafka/releases/download/v${KAFKA_BACKEND_LISTENER_VERSION}/jmeter.backendlistener.kafka-${KAFKA_BACKEND_LISTENER_VERSION}.jar && \
-wget https://github.com/metersphere/jmeter-functions/releases/download/v1.0.0/metersphere-jmeter-functions-v1.0.0.jar && \
+wget https://github.com/metersphere/jmeter-functions/releases/download/v1.0.1/metersphere-jmeter-functions-v1.0.1.jar && \
 wget https://github.com/metersphere/jmeter-plugins-for-apache-dubbo/releases/download/${DUBBO_JMETER_PLUGIN_VERSION}/jmeter-plugins-dubbo-${DUBBO_JMETER_PLUGIN_VERSION}-jar-with-dependencies.jar && \
 wget https://repo1.maven.org/maven2/org/python/jython-standalone/2.7.2/jython-standalone-2.7.2.jar && \
 wget "http://search.maven.org/remotecontent?filepath=mysql/mysql-connector-java/5.1.49/mysql-connector-java-5.1.49.jar" -O mysql-connector-java.jar && \
@@ -19,7 +19,7 @@ tar -zxf apache-jmeter-${JMETER_VERSION}.tgz -C ${JMETER_HOME}/  --strip-compone
 unzip -o jpgc-casutg-2.9.zip -d /tmp/ && mv /tmp/lib/ext/jmeter-plugins-casutg-2.9.jar ${JMETER_HOME}/lib/ext && \
 unzip -o jpgc-tst-2.5.zip -d /tmp/ && mv /tmp/lib/ext/jmeter-plugins-tst-2.5.jar ${JMETER_HOME}/lib/ext && \
 mv jmeter.backendlistener.kafka-${KAFKA_BACKEND_LISTENER_VERSION}.jar ${JMETER_HOME}/lib/ext && \
-mv metersphere-jmeter-functions-v1.0.0.jar ${JMETER_HOME}/lib/ext && \
+mv metersphere-jmeter-functions-v1.0.1.jar ${JMETER_HOME}/lib/ext && \
 mv jmeter-plugins-dubbo-${DUBBO_JMETER_PLUGIN_VERSION}-jar-with-dependencies.jar ${JMETER_HOME}/lib/ext && \
 mv mysql-connector-java.jar ${JMETER_HOME}/lib/ext && \
 mv ojdbc8.jar ${JMETER_HOME}/lib/ext && \

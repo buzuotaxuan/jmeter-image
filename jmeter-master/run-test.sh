@@ -12,5 +12,5 @@ if [ ! -f "${TESTS_DIR}/ms.properties" ]; then
 fi
 
 for file in ${TESTS_DIR}/*.jmx; do
-  jmeter -n -t ${file} -Jserver.rmi.ssl.disable=${SSL_DISABLED} -p ms.properties
+  jmeter -n -t ${file} -Jserver.rmi.ssl.disable=${SSL_DISABLED} -p ${TESTS_DIR}/ms.properties
 done

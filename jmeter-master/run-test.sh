@@ -6,6 +6,11 @@ do
   sleep 0.2
 done
 
+# check file
+if [ ! -f "${TESTS_DIR}/ms.properties" ]; then
+  touch "${TESTS_DIR}/ms.properties"
+fi
+
 for file in ${TESTS_DIR}/*.jmx; do
-  jmeter -n -t ${file} -Jserver.rmi.ssl.disable=${SSL_DISABLED}
+  jmeter -n -t ${file} -Jserver.rmi.ssl.disable=${SSL_DISABLED} -p ms.properties
 done

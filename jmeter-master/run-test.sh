@@ -11,6 +11,11 @@ if [ ! -f "${TESTS_DIR}/ms.properties" ]; then
   touch "${TESTS_DIR}/ms.properties"
 fi
 
+# dns
+if [ ! -f "${TESTS_DIR}/hosts" ]; then
+  cat ${TESTS_DIR}/hosts >> /etc/hosts
+fi
+
 for file in ${TESTS_DIR}/*.jmx; do
   jmeter -n -t ${file} -Jserver.rmi.ssl.disable=${SSL_DISABLED} -p ${TESTS_DIR}/ms.properties
 done

@@ -7,7 +7,7 @@ if [ ! -f "${TESTS_DIR}/ms.properties" ]; then
 fi
 
 # dns
-if [ ! -f "${TESTS_DIR}/hosts" ]; then
+if [ -f "${TESTS_DIR}/hosts" ]; then
   cat ${TESTS_DIR}/hosts >> /etc/hosts
 fi
 

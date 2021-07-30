@@ -28,7 +28,7 @@ mv mssql-jdbc.jar ${JMETER_HOME}/lib/ext && \
 mv jmeter-plugins-threadgroup-autostop.jar ${JMETER_HOME}/lib/ext && \
 mv kafka-clients-2.7.1.jar ${JMETER_HOME}/lib/ext && \
 mv jython-standalone-2.7.2.jar ${JMETER_HOME}/lib/ext && \
-mv generate-report-0.0.1.jar /jmeter-log && \
+mv generate-report-0.0.1.jar /jmeter-log/generate-report.jar && \
 rm -rf apache-jmeter-${JMETER_VERSION}.tgz && \
 rm -rf jpgc-casutg-2.9.zip && \
 rm -rf jpgc-tst-2.5.zip && \

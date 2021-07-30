@@ -2,8 +2,8 @@ wget --no-check-certificate "${METERSPHERE_URL}/jmeter/download?testId=${TEST_ID
 unzip -o ${TEST_ID}.zip -d ${TESTS_DIR}
 
 # check file
-if [ ! -f "${TESTS_DIR}/ms.properties" ]; then
-  touch "${TESTS_DIR}/ms.properties"
+if [ -f "${TESTS_DIR}/ms.properties" ]; then
+  cat ${TESTS_DIR}/ms.properties >> /opt/jmeter/bin/jmeter.properties
 fi
 
 # dns
@@ -16,7 +16,7 @@ while [[ $(curl -s -G -d "ratio=${RATIO}" -d "resourceIndex=${RESOURCE_INDEX}" -
 done
 
 # run test
-jmeter -n -t ${TESTS_DIR}/${TEST_ID}.jmx -l ${REPORT_ID}.jtl -p ${TESTS_DIR}/ms.properties &
+jmeter -n -t ${TESTS_DIR}/${TEST_ID}.jmx -l ${REPORT_ID}.jtl &
 pid=$!
 java -jar generate-report.jar --reportId=${REPORT_ID} --granularity=${GRANULARITY}
 echo "waiting jmeter done..."

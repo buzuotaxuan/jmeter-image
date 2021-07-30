@@ -8,14 +8,17 @@ fi
 
 # dns
 if [ -f "${TESTS_DIR}/hosts" ]; then
-  cat ${TESTS_DIR}/hosts >> /etc/hosts
+  cat ${TESTS_DIR}/hosts >>/etc/hosts
 fi
 
-while [[ $(curl -s -G -d "ratio=${RATIO}" -d "resourceIndex=${RESOURCE_INDEX}" -d "reportId=${REPORT_ID}" ${METERSPHERE_URL}/jmeter/ready) -gt  0 ]]
-do
+while [[ $(curl -s -G -d "ratio=${RATIO}" -d "resourceIndex=${RESOURCE_INDEX}" -d "reportId=${REPORT_ID}" ${METERSPHERE_URL}/jmeter/ready) -gt 0 ]]; do
   sleep 0.2
 done
 
-for file in ${TESTS_DIR}/*.jmx; do
-  jmeter -n -t ${file} -Jserver.rmi.ssl.disable=${SSL_DISABLED} -p ${TESTS_DIR}/ms.properties
-done
+# run test
+jmeter -n -t ${TESTS_DIR}/${TEST_ID}.jmx -l ${REPORT_ID}.jtl -p ${TESTS_DIR}/ms.properties &
+pid=$!
+java -jar generate-report.jar --reportId=${REPORT_ID} --granularity=${GRANULARITY}
+echo "waiting jmeter done..."
+wait $pid
+echo 'jmeter exited.'

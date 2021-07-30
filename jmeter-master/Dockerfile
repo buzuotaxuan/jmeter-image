@@ -16,7 +16,7 @@ ENV TZ=Asia/Shanghai
 
 # 执行构建脚本
 ADD build-jmeter.sh /build-jmeter.sh
-RUN chmod +x /build-jmeter.sh
+RUN chmod +x /build-jmeter.sh && mkdir /jmeter-log
 RUN ./build-jmeter.sh
 
 #
@@ -28,10 +28,7 @@ EXPOSE 60000
 
 ADD run-test.sh /run-test.sh
 RUN chmod +x /run-test.sh \
-    && mkdir /test \
-    && mkdir /jmeter-log
-
-ADD generate-report.jar /jmeter-log
+    && mkdir /test
 
 WORKDIR /jmeter-log/
 ENTRYPOINT /run-test.sh

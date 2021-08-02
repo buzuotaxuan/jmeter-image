@@ -12,13 +12,18 @@ if [ -f "${TESTS_DIR}/hosts" ]; then
 fi
 
 while [[ $(curl -s -G -d "ratio=${RATIO}" -d "resourceIndex=${RESOURCE_INDEX}" -d "reportId=${REPORT_ID}" ${METERSPHERE_URL}/jmeter/ready) -gt 0 ]]; do
-  sleep 0.2
+  echo "time syncing..."
+  sleep 0.5
 done
 
 # run test
 jmeter -n -t ${TESTS_DIR}/${TEST_ID}.jmx -l ${REPORT_ID}.jtl &
 pid=$!
-java -jar generate-report.jar --reportId=${REPORT_ID} --granularity=${GRANULARITY}
+
+if [ -z ${BACKEND_LISTENER} ] || [ ${BACKEND_LISTENER} = 'false' ]; then
+ java -jar generate-report.jar --reportId=${REPORT_ID} --granularity=${GRANULARITY}
+fi
+
 echo "waiting jmeter done..."
 wait $pid
 echo 'jmeter exited.'

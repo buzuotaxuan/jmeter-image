@@ -1,6 +1,6 @@
 ARG IMAGE_PREFIX=metersphere
 
-FROM alpine:3.14
+FROM alpine:3.13
 LABEL maintainer="support@fit2cloud.com"
 
 # 环境变量

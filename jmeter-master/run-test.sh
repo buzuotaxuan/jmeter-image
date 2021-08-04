@@ -17,7 +17,7 @@ while [[ $(curl -s -G -d "ratio=${RATIO}" -d "resourceIndex=${RESOURCE_INDEX}" -
 done
 
 # run test
-jmeter -n -t ${TESTS_DIR}/${TEST_ID}.jmx -l ${REPORT_ID}.jtl &
+nohup jmeter -n -t ${TESTS_DIR}/${TEST_ID}.jmx -l ${REPORT_ID}.jtl > jmeter.out 2>&1 &
 pid=$!
 
 if [ -z ${BACKEND_LISTENER} ] || [ ${BACKEND_LISTENER} = 'false' ]; then

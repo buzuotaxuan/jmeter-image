@@ -8,7 +8,7 @@ wget https://jmeter-plugins.org/files/packages/jpgc-tst-2.5.zip && \
 wget https://hub.fastgit.org/metersphere/jmeter-backend-listener-kafka/releases/download/v${KAFKA_BACKEND_LISTENER_VERSION}/jmeter.backendlistener.kafka-${KAFKA_BACKEND_LISTENER_VERSION}.jar && \
 wget https://hub.fastgit.org/metersphere/jmeter-functions/releases/download/v1.0.1/metersphere-jmeter-functions-v1.0.1.jar && \
 wget https://hub.fastgit.org/metersphere/jmeter-plugins-for-apache-dubbo/releases/download/${DUBBO_JMETER_PLUGIN_VERSION}/jmeter-plugins-dubbo-${DUBBO_JMETER_PLUGIN_VERSION}-jar-with-dependencies.jar && \
-wget https://hub.fastgit.org/liuruibin/generate-report/releases/download/v0.2.2/generate-report-0.2.2.jar && \
+wget https://hub.fastgit.org/liuruibin/generate-report/releases/download/v0.2.3/generate-report-0.2.3.jar && \
 wget https://repo1.maven.org/maven2/org/python/jython-standalone/2.7.2/jython-standalone-2.7.2.jar && \
 wget "http://search.maven.org/remotecontent?filepath=mysql/mysql-connector-java/5.1.49/mysql-connector-java-5.1.49.jar" -O mysql-connector-java.jar && \
 wget "http://search.maven.org/remotecontent?filepath=com/oracle/database/jdbc/ojdbc8/19.7.0.0/ojdbc8-19.7.0.0.jar" -O ojdbc8.jar && \
@@ -28,7 +28,7 @@ mv postgresql.jar ${JMETER_HOME}/lib/ext && \
 mv mssql-jdbc.jar ${JMETER_HOME}/lib/ext && \
 mv jmeter-plugins-threadgroup-autostop.jar ${JMETER_HOME}/lib/ext && \
 mv jython-standalone-2.7.2.jar ${JMETER_HOME}/lib/ext && \
-mv generate-report-0.2.2.jar /jmeter-log/generate-report.jar && \
+mv generate-report-0.2.3.jar /jmeter-log/generate-report.jar && \
 rm -rf apache-jmeter-${JMETER_VERSION}.tgz && \
 rm -rf jpgc-casutg-2.9.zip && \
 rm -rf jpgc-tst-2.5.zip && \

@@ -2,8 +2,8 @@ wget --no-check-certificate "${METERSPHERE_URL}/jmeter/download?testId=${TEST_ID
 unzip -o ${TEST_ID}.zip -d ${TESTS_DIR}
 
 # check file
-if [ ! -f "${TESTS_DIR}/ms.properties" ]; then
-  touch "${TESTS_DIR}/ms.properties"
+if [ -f "${TESTS_DIR}/ms.properties" ]; then
+  cat ${TESTS_DIR}/ms.properties >> /opt/jmeter/bin/jmeter.properties
 fi
 
 # dns
@@ -17,5 +17,5 @@ do
 done
 
 for file in ${TESTS_DIR}/*.jmx; do
-  jmeter -n -t ${file} -Jserver.rmi.ssl.disable=${SSL_DISABLED} -p ${TESTS_DIR}/ms.properties
+  jmeter -n -t ${file} -Jserver.rmi.ssl.disable=${SSL_DISABLED}
 done

@@ -1,5 +1,20 @@
-wget --no-check-certificate "${METERSPHERE_URL}/jmeter/download?testId=${TEST_ID}&resourceId=${RESOURCE_ID}&ratio=${RATIO}&reportId=${REPORT_ID}&resourceIndex=${RESOURCE_INDEX}" -O ${TEST_ID}.zip
-unzip -o ${TEST_ID}.zip -d ${TESTS_DIR}
+# 
+function download() {
+  wget --no-check-certificate "${METERSPHERE_URL}/jmeter/download?testId=${TEST_ID}&resourceId=${RESOURCE_ID}&ratio=${RATIO}&reportId=${REPORT_ID}&resourceIndex=${RESOURCE_INDEX}" -O ${TEST_ID}.zip
+  unzip -o ${TEST_ID}.zip -d ${TESTS_DIR}
+}
+
+count=3
+# download zip
+count=3
+download
+while [ $? -ne 0 ] && [ $count -gt 0 ]; do
+  count=$(($count-1))
+  sleep 2
+
+  download
+done
+
 
 # check file
 if [ -f "${TESTS_DIR}/ms.properties" ]; then

@@ -17,8 +17,8 @@ while [[ $(curl -s -G -d "ratio=${RATIO}" -d "resourceIndex=${RESOURCE_INDEX}" -
 done
 
 # run test
-nohup jmeter -n -t ${TESTS_DIR}/${TEST_ID}.jmx -l ${REPORT_ID}_${RESOURCE_INDEX}.jtl > jmeter.out 2>&1 &
-pid=$!
+( nohup jmeter -n -t ${TESTS_DIR}/${TEST_ID}.jmx -l ${REPORT_ID}_${RESOURCE_INDEX}.jtl 2>&1 & echo $! > jmeter.pid ) | tee -a jmeter.out &
+pid=$(cat jmeter.pid)
 
 if [ -z ${BACKEND_LISTENER} ] || [ ${BACKEND_LISTENER} = 'false' ]; then
  java -jar generate-report.jar --reportId=${REPORT_ID} --granularity=${GRANULARITY}

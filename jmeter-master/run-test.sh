@@ -32,7 +32,7 @@ while [[ $(curl -s -G -d "ratio=${RATIO}" -d "resourceIndex=${RESOURCE_INDEX}" -
 done
 
 # run test
-nohup jmeter -n -t ${TESTS_DIR}/${TEST_ID}.jmx -l ${REPORT_ID}_${RESOURCE_INDEX}.jtl > jmeter.out 2>&1 &
+jmeter -n -t ${TESTS_DIR}/${TEST_ID}.jmx -l ${REPORT_ID}_${RESOURCE_INDEX}.jtl &
 pid=$!
 
 if [ -z ${BACKEND_LISTENER} ] || [ ${BACKEND_LISTENER} = 'false' ]; then

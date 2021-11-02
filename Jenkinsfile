@@ -10,13 +10,11 @@ pipeline {
         IMAGE_PREFIX = 'registry.cn-qingdao.aliyuncs.com/metersphere'
     }
     stages {
-        // stage('Docker build & push Base Image') {
-        //     steps {
-        //         sh "docker build -t jmeter-base:latest ./jmeter-base/"
-        //         sh "docker tag jmeter-base:latest ${IMAGE_FREFIX}/jmeter-base:latest"
-        //         sh "docker push ${IMAGE_FREFIX}/jmeter-base:latest"
-        //     }
-        // }
+        stage('Download resources') {
+            steps {
+                sh "./jmeter-master/download.sh"
+            }
+        }
         stage('Docker build & push') {
             steps {
                 sh "docker build -t ${IMAGE_NAME}:\${TAG_NAME:-\$BRANCH_NAME} ./jmeter-master/"

@@ -15,9 +15,16 @@ ENV PATH $PATH:$JMETER_HOME/bin:/usr/lib/jvm/java-${JAVA_VERSION}-openjdk/bin
 #定义时区参数
 ENV TZ=Asia/Shanghai
 
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories && \
+apk update && \
+apk upgrade && \
+apk add --update openjdk${JAVA_VERSION} wget curl tar bash
+
 # 执行构建脚本
-ADD build-jmeter.sh /build-jmeter.sh
-RUN chmod +x /build-jmeter.sh && mkdir /jmeter-log
+WORKDIR /opt/cache/
+ADD .cache/ ./
+ADD build-jmeter.sh ./build-jmeter.sh
+RUN chmod +x ./build-jmeter.sh && mkdir /jmeter-log
 RUN ./build-jmeter.sh
 
 #

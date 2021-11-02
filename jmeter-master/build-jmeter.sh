@@ -9,7 +9,7 @@ JMETER_VERSION="5.4.1" &&
   mkdir -p "${SCRIPT_DIR}/.cache" &&
   cd "${SCRIPT_DIR}/.cache" &&
   wget -N --no-check-certificate https://mirrors.tuna.tsinghua.edu.cn/apache/jmeter/binaries/apache-jmeter-${JMETER_VERSION}.tgz &&
-  wget -N --no-check-certificate https://jmeter-plugins.org/files/packages/jpgc-casutg-2.9.zip &&
+  wget -N --no-check-certificate https://jmeter-plugins.org/files/packages/jpgc-casutg-2.10.zip &&
   wget -N --no-check-certificate https://jmeter-plugins.org/files/packages/jpgc-tst-2.5.zip &&
   wget -N --no-check-certificate https://hub.fastgit.org/metersphere/jmeter-backend-listener-kafka/releases/download/v${KAFKA_BACKEND_LISTENER_VERSION}/jmeter.backendlistener.kafka-${KAFKA_BACKEND_LISTENER_VERSION}.jar &&
   wget -N --no-check-certificate https://hub.fastgit.org/metersphere/jmeter-functions/releases/download/v1.0.1/metersphere-jmeter-functions-v1.0.1.jar &&
@@ -23,7 +23,7 @@ JMETER_VERSION="5.4.1" &&
   wget -N --no-check-certificate https://repo1.maven.org/maven2/io/metersphere/jmeter-plugins-threadgroup-autostop/0.1/jmeter-plugins-threadgroup-autostop-0.1.jar &&
   mkdir -p ${JMETER_HOME} &&
   tar -zxf apache-jmeter-${JMETER_VERSION}.tgz -C ${JMETER_HOME}/ --strip-components=1 &&
-  unzip -o jpgc-casutg-2.9.zip -d ./ && cp ./lib/ext/jmeter-plugins-casutg-2.9.jar ${JMETER_HOME}/lib/ext &&
+  unzip -o jpgc-casutg-2.10.zip -d ./ && cp ./lib/ext/jmeter-plugins-casutg-2.10.jar ${JMETER_HOME}/lib/ext &&
   unzip -o jpgc-tst-2.5.zip -d ./ && cp ./lib/ext/jmeter-plugins-tst-2.5.jar ${JMETER_HOME}/lib/ext &&
   cp metersphere-jmeter-functions-v1.0.1.jar ${JMETER_HOME}/lib/ext &&
   cp jmeter-plugins-dubbo-${DUBBO_JMETER_PLUGIN_VERSION}-jar-with-dependencies.jar ${JMETER_HOME}/lib/ext &&

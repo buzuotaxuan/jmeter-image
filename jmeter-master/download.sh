@@ -7,7 +7,8 @@ JMETER_VERSION="5.4.1" &&
     cd $(dirname "${BASH_SOURCE[0]}")
     pwd
   ) &&
-  cd ${SCRIPT_DIR}/.cache &&
+  mkdir -p "${SCRIPT_DIR}/.cache" &&
+  cd "${SCRIPT_DIR}/.cache" &&
   wget -nc https://mirrors.tuna.tsinghua.edu.cn/apache/jmeter/binaries/apache-jmeter-${JMETER_VERSION}.tgz &&
   wget -nc https://jmeter-plugins.org/files/packages/jpgc-casutg-2.9.zip &&
   wget -nc https://jmeter-plugins.org/files/packages/jpgc-tst-2.5.zip &&

@@ -12,5 +12,6 @@ mv mssql-jdbc.jar ${JMETER_HOME}/lib/ext && \
 mv jmeter-plugins-threadgroup-autostop.jar ${JMETER_HOME}/lib/ext && \
 mv jython-standalone-2.7.2.jar ${JMETER_HOME}/lib/ext && \
 mv generate-report-0.3.1.jar /jmeter-log/generate-report.jar && \
-ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo "$TZ" > /etc/timezone
-rm -rf /opt/cache/
+ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo "$TZ" > /etc/timezone && \
+rm -rf /opt/cache/ && \
+rm -rf /var/cache/apk/*

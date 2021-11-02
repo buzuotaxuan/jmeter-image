@@ -14,14 +14,14 @@ ENV PATH $PATH:$JMETER_HOME/bin:/usr/lib/jvm/java-${JAVA_VERSION}-openjdk/bin
 
 #定义时区参数
 ENV TZ=Asia/Shanghai
-#
+
+# 执行构建脚本
+ADD .cache/jmeter /opt/jmeter
 ADD log4j2.xml $JMETER_HOME/bin/log4j2.xml
 ADD jmeter.properties $JMETER_HOME/bin/jmeter.properties
 ADD run-test.sh /run-test.sh
 RUN chmod +x /run-test.sh && mkdir /test
 
-# 执行构建脚本
-ADD .cache/jmeter /opt/jmeter
 RUN mkdir /jmeter-log
 
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories && \

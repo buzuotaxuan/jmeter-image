@@ -16,7 +16,7 @@ ENV PATH $PATH:$JMETER_HOME/bin:/usr/lib/jvm/java-${JAVA_VERSION}-openjdk/bin
 ENV TZ=Asia/Shanghai
 
 # 执行构建脚本
-ADD .cache/jmeter /opt/jmeter
+ADD .cache/jmeter $JMETER_HOME
 ADD log4j2.xml $JMETER_HOME/bin/log4j2.xml
 ADD jmeter.properties $JMETER_HOME/bin/jmeter.properties
 ADD run-test.sh /run-test.sh

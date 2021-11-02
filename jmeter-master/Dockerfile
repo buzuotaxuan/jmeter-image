@@ -17,6 +17,18 @@ ENV TZ=Asia/Shanghai
 
 # 执行构建脚本
 ADD .cache/jmeter $JMETER_HOME
+ADD .cache/metersphere-jmeter-functions-v1.0.1.jar ${JMETER_HOME}/lib/ext
+ADD .cache/jmeter-plugins-dubbo-${DUBBO_JMETER_PLUGIN_VERSION}-jar-with-dependencies.jar ${JMETER_HOME}/lib/ext
+ADD .cache/jmeter.backendlistener.kafka-${KAFKA_BACKEND_LISTENER_VERSION}.jar ${JMETER_HOME}/lib/ext
+ADD .cache/mysql-connector-java-5.1.49.jar ${JMETER_HOME}/lib/ext
+ADD .cache/ojdbc8-19.7.0.0.jar ${JMETER_HOME}/lib/ext
+ADD .cache/postgresql-42.2.14.jar ${JMETER_HOME}/lib/ext
+ADD .cache/mssql-jdbc-7.4.1.jre8.jar ${JMETER_HOME}/lib/ext
+ADD .cache/jmeter-plugins-threadgroup-autostop-0.1.jar ${JMETER_HOME}/lib/ext
+ADD .cache/jython-standalone-2.7.2.jar ${JMETER_HOME}/lib/ext
+ADD .cache/lib/ext/jmeter-plugins-casutg-2.10.jar ${JMETER_HOME}/lib/ext
+ADD .cache/lib/ext/jmeter-plugins-tst-2.5.jar ${JMETER_HOME}/lib/ext
+#
 ADD log4j2.xml $JMETER_HOME/bin/log4j2.xml
 ADD jmeter.properties $JMETER_HOME/bin/jmeter.properties
 ADD run-test.sh /run-test.sh

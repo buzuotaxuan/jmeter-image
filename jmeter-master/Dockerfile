@@ -42,7 +42,7 @@ ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo "$TZ" > /etc/timezone && 
 rm -rf /var/cache/apk/*
 
 #
-ADD .cache/generate-report-0.3.1.jar /jmeter-log/generate-report.jar
+ADD .cache/generate-report-0.3.2.jar /jmeter-log/generate-report.jar
 
 EXPOSE 60000
 WORKDIR /jmeter-log/

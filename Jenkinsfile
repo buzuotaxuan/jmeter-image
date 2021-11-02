@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Download resources') {
             steps {
-                sh "./jmeter-master/download.sh"
+                sh "./jmeter-master/build-jmeter.sh"
             }
         }
         stage('Docker build & push') {

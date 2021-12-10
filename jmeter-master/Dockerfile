@@ -11,6 +11,7 @@ ENV JMETER_HOME /opt/jmeter
 ENV TESTS_DIR /test
 ENV JAVA_VERSION "8"
 ENV PATH $PATH:$JMETER_HOME/bin:/usr/lib/jvm/java-${JAVA_VERSION}-openjdk/bin
+ENV FORMAT_MASSAGES_PATTERN_DISABLE_LOOKUPS "true"
 
 #定义时区参数
 ENV TZ=Asia/Shanghai

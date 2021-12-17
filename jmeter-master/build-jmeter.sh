@@ -22,7 +22,7 @@ JMETER_VERSION="5.4.1" &&
   wget -N --no-check-certificate https://repo1.maven.org/maven2/com/oracle/database/jdbc/ojdbc8/19.7.0.0/ojdbc8-19.7.0.0.jar &&
   wget -N --no-check-certificate https://repo1.maven.org/maven2/org/postgresql/postgresql/42.2.14/postgresql-42.2.14.jar &&
   wget -N --no-check-certificate https://repo1.maven.org/maven2/com/microsoft/sqlserver/mssql-jdbc/7.4.1.jre8/mssql-jdbc-7.4.1.jre8.jar &&
-  wget -N --no-check-certificate https://repo1.maven.org/maven2/io/metersphere/jmeter-plugins-threadgroup-autostop/0.1/jmeter-plugins-threadgroup-autostop-0.1.jar &&
+  wget -N --no-check-certificate https://repo1.maven.org/maven2/io/metersphere/jmeter-plugins-threadgroup-autostop/1.0.0/jmeter-plugins-threadgroup-autostop-1.0.0.jar &&
   mkdir -p ${JMETER_HOME} &&
   tar -zxf apache-jmeter-${JMETER_VERSION}.tgz -C ${JMETER_HOME}/ --strip-components=1 &&
   unzip -o jpgc-casutg-2.10.zip -d ./ &&

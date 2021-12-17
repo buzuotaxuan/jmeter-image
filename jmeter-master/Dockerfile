@@ -11,7 +11,7 @@ ENV JMETER_HOME /opt/jmeter
 ENV TESTS_DIR /test
 ENV JAVA_VERSION "8"
 ENV PATH $PATH:$JMETER_HOME/bin:/usr/lib/jvm/java-${JAVA_VERSION}-openjdk/bin
-ENV FORMAT_MASSAGES_PATTERN_DISABLE_LOOKUPS "true"
+ENV FORMAT_MESSAGES_PATTERN_DISABLE_LOOKUPS "true"
 
 #定义时区参数
 ENV TZ=Asia/Shanghai
@@ -25,7 +25,7 @@ ADD .cache/mysql-connector-java-5.1.49.jar ${JMETER_HOME}/lib/ext
 ADD .cache/ojdbc8-19.7.0.0.jar ${JMETER_HOME}/lib/ext
 ADD .cache/postgresql-42.2.14.jar ${JMETER_HOME}/lib/ext
 ADD .cache/mssql-jdbc-7.4.1.jre8.jar ${JMETER_HOME}/lib/ext
-ADD .cache/jmeter-plugins-threadgroup-autostop-0.1.jar ${JMETER_HOME}/lib/ext
+ADD .cache/jmeter-plugins-threadgroup-autostop-1.0.0.jar ${JMETER_HOME}/lib/ext
 ADD .cache/jython-standalone-2.7.2.jar ${JMETER_HOME}/lib/ext
 ADD .cache/lib/ext/jmeter-plugins-casutg-2.10.jar ${JMETER_HOME}/lib/ext
 ADD .cache/lib/ext/jmeter-plugins-tst-2.5.jar ${JMETER_HOME}/lib/ext

@@ -16,7 +16,7 @@ JMETER_VERSION="5.4.3" &&
   wget -N --no-check-certificate https://hub.fastgit.org/metersphere/jmeter-backend-listener-kafka/releases/download/v${KAFKA_BACKEND_LISTENER_VERSION}/jmeter.backendlistener.kafka-${KAFKA_BACKEND_LISTENER_VERSION}.jar &&
   wget -N --no-check-certificate https://hub.fastgit.org/metersphere/jmeter-functions/releases/download/v1.0.1/metersphere-jmeter-functions-v1.0.1.jar &&
   wget -N --no-check-certificate https://hub.fastgit.org/metersphere/jmeter-plugins-for-apache-dubbo/releases/download/${DUBBO_JMETER_PLUGIN_VERSION}/jmeter-plugins-dubbo-${DUBBO_JMETER_PLUGIN_VERSION}-jar-with-dependencies.jar &&
-  wget -N --no-check-certificate https://hub.fastgit.org/metersphere/generate-report-release/releases/download/v0.3.3/generate-report-0.3.3.jar &&
+  wget -N --no-check-certificate https://hub.fastgit.org/metersphere/generate-report-release/releases/download/v0.3.4/generate-report-0.3.4.jar &&
   wget -N --no-check-certificate https://repo1.maven.org/maven2/org/python/jython-standalone/2.7.2/jython-standalone-2.7.2.jar &&
   wget -N --no-check-certificate https://repo1.maven.org/maven2/mysql/mysql-connector-java/5.1.49/mysql-connector-java-5.1.49.jar &&
   wget -N --no-check-certificate https://repo1.maven.org/maven2/com/oracle/database/jdbc/ojdbc8/19.7.0.0/ojdbc8-19.7.0.0.jar &&

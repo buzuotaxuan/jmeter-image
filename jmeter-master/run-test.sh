@@ -21,6 +21,11 @@ if [ -f "${TESTS_DIR}/ms.properties" ]; then
   cat ${TESTS_DIR}/ms.properties >> /opt/jmeter/bin/jmeter.properties
 fi
 
+# check file
+if [ -f "${TESTS_DIR}/sys.properties" ]; then
+  cat ${TESTS_DIR}/sys.properties >> /opt/jmeter/bin/system.properties
+fi
+
 # dns
 if [ -f "${TESTS_DIR}/hosts" ]; then
   cat ${TESTS_DIR}/hosts >>/etc/hosts
